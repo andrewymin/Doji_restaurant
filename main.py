@@ -57,6 +57,7 @@ def modal():
         # print(item[7])
         return jsonify('', render_template('modal.html', item=item))
 
+
 @app.route('/shopping_cart', methods=["POST", "GET"])
 def cart():
     # Using this route to delete all items in the cart for testing purposes
