@@ -1,0 +1,83 @@
+<div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-title">
+        {{item.item_name.title()}}
+      </div>
+      <button data-close-button type="button" class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+        <div class="success_flash"></div>
+        <div class="item">
+
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+<!--Going to have to add checkbox form for soup or salads for certain sections-->
+          {% if item.description %}
+              <div class="description">
+                {{item.description}}
+              </div>
+          {% endif %}
+
+          {% if item.sos %}
+            <div class="sos">
+                Miso Soup:
+                <input type="radio" name="soup_salad" value="Miso Soup" checked>
+                Clear Soup:
+                <input type="radio" name="soup_salad" value="Clear Soup">
+                Salad:
+                <input type="radio" name="soup_salad" value="Salad Soup">
+            </div>
+          {% endif %}
+
+          {%if item.item_name.lower() == "maki combo pick 2 rolls:"%}
+            <div class="checkbox_roll required">
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="vegetable" required> Vegetable Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="salmon"> Salmon Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="avocado"> Avocado Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="eel"> Eel Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="cucumber"> Cucumber Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="tuna"> Tuna Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="spicy tuna"> Spicy Tuna Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="yellowtail roll"> Yellowtail Roll<br>
+            </div>
+          {%endif%}
+
+          {% if item.option%}
+            <div style="margin: 20px 0;">
+                OR
+            </div>
+            <div class="option2">
+                {{item.option}}:
+            </div>
+          {% endif %}
+
+          {% if item.price2 %}
+              <div class="price2">
+                  {{"%0.2f"|format(item.price2|float)}}
+              </div>
+          {% endif %}
+
+          {% if item.img%}
+            <img class="item-img" src="../static/images/lunch/{{item.img}}" alt="{{item.alt}}">
+          {% endif %}
+
+          <div class="item-count">
+            <button type="button" class='minus'>-</button>
+            <div class="quantity">
+              {{item.quantity}}
+            </div>
+            <button type="button" class='plus'>+</button>
+            </div>
+            <div class="added-price">
+            <!-- add total price with js -->
+                    Total: <span>{{"$%.2f"|format(item.item_total.replace('$','')|float)}}</span>
+            </div>
+            <div class='update'>
+<!--              add ajax for button to add to shopping cart db-->
+              <button onclick="updateItem({{item.position}})">Done</button>
+            </div>
+        </div>
+
+    </div>
+  </div>

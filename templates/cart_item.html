@@ -1,0 +1,46 @@
+
+{%for i in items%}
+  <div data-id="{{i.id}}" class="item">
+    <div>
+      <button class="edit" onclick="edit({{i.position}})">Edit</button>
+      <button class="delete" onclick="delete_item({{i.position}})">Delete</button>
+    </div>
+    <div class="item-header">
+      {{i.item_name.title()}}
+    </div>
+      {% if i.option != None%}
+        <div class="option2">
+         {{i.option}}
+        </div>
+      {% endif %}
+
+      <div class="quantity">
+        Quantity: <span>{{i.quantity}}</span>
+      </div>
+
+      {% if i.sos != None%}
+        <div class="sos">
+         {{i.sos}}
+        </div>
+      {% endif %}
+
+
+      {%if i.maki_rolls|length%}
+        <div class="rolls">
+          {%for roll in i.maki_rolls%}
+              <div>{{roll}}</div>
+          {%endfor%}
+        </div>
+      {%endif%}
+
+    <div class="price">
+      <span>{{'%0.2f'|format(i.price|float)}}</span>
+    </div>
+    <div class="total_price">
+        {{i.item_total}}
+    </div>
+<!--      {% if i.image %}-->
+<!--        <img class="item-img" src="../static/images/day/{{i.image}}" alt="{{menu.alt}}">-->
+<!--      {%endif%}-->
+  </div>
+{% endfor %}

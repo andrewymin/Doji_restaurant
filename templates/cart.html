@@ -1,0 +1,70 @@
+{% include "header.html" %}
+  <title>Matsumotto - Shopping Cart</title>
+</head>
+
+<body>
+<!--  <div class="wrapper">-->
+
+
+    <section class="header">
+      <!-- <button class="mood"></button> -->
+
+      <!-- Added mouse following icon; .sushi_icon by jquery -->
+
+ <nav class='navbar cart_nav'>
+        <!-- <li class="map_link"><a href="#">1975 W 120th Ave, Westminster <i class="las la-external-link-alt"></i></a></li> -->
+        <div class="sub-brand">
+          <a href="{{ url_for('home') }}"><img class="logo" src="../static/images/matsumotto-logo.jpg" /></a>
+          <!-- <a class="nav-item active" href=index.html>Matsumotto</a> -->
+        </div>
+        <!-- <a class="nav-item active" href=index.html>Matsumotto</a> -->
+        <div class="drop-down">
+          <a class="nav-item dp-items" href='{{ url_for("day") }}'>Main Menu</a>
+          <a class="nav-item dp-items" href='{{ url_for("lunch") }}'>Lunch Menu</a>
+        </div>
+
+        <div>
+          <!-- Insert image for cart later -->
+<!--          <a class='cart' href="https://qmenu.us"><img src="../static/images/cart-icon.svg" /></a>-->
+          <div class="item_num"></div>
+          <a class='cart' href="{{ url_for('cart')}}"><img src="../static/images/cart-icon.svg" /></a>
+        </div>
+
+        <a href="#" class="nav-item icon">
+          <img class="hambuger-icon flipIn" src="../static/images/menu-icon.svg" alt="menu-icon">
+          <img class="close-icon" src="../static/images/close-symbol.svg" alt="close-dropdown-menu">
+        </a>
+      </nav>
+
+    </section>
+    <!-- Will end the header template here for all other pages if any -->
+
+    <div class="cart_box">
+        <div class="cart_list flex-1"></div>
+
+        <div class="checkout flex-1">
+<!--            <img class="logo" src="../static/images/matsumotto-logo.jpg" />-->
+            <div class="pick_up_time">Order ahead, food be ready in 30min</div>
+            <div class="total">Subtotal: $<span></span></div>
+            <div><button onclick="checkout()">Checkout</button></div>
+        </div>
+    </div>
+
+<div class="modal" id="modal"></div>
+<div id='overlay'></div>
+
+    <footer>
+      <!-- will add copyright © with jquery  -->
+    </footer>
+
+<!--  </div>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="../static/js/index.js" charset="utf-8" type="text/javascript"></script>
+    <script src="../static/js/cart_page.js" charset="utf-8" type="text/javascript"></script>
+    <button onclick="topFunction()" id='topButton' title="Go to top">Top</button>
+
+</body>
+
+</html>

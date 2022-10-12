@@ -1,0 +1,88 @@
+  <div class="modal" id="modal">
+    <div class="modal-header">
+      <div class="modal-title">
+        {{item[2].title()}}
+      </div>
+      <button data-close-button type="button" class="close-button">&times;</button>
+    </div>
+    <div class="modal-body">
+
+        <div class="success_flash"></div>
+
+        <div class="item">
+
+              <div class="price">
+                <span>{{'%0.2f'|format(item[4]|float)}}</span>
+              </div>
+<!--Going to have to add checkbox form for soup or salads for certain sections-->
+          {% if item[5]%}
+            <div style="margin: 20px 0;">
+                OR
+            </div>
+            <div class="option2">
+                {{item[5]}}:
+            </div>
+          {% endif %}
+
+            {% if item[6] %}
+                <div class="price2">
+                    {{"%0.2f"|format(item[6]|float)}}
+                </div>
+            {% endif %}
+
+          {% if item[3]%}
+          <div class="description">
+            {{item[3]}}
+          </div>
+          {% endif %}
+
+          {% if item[7] %}
+            <div class="sos">
+                Miso Soup:
+                <input type="radio" name="soup_salad" value="Miso Soup" checked>
+                Clear Soup:
+                <input type="radio" name="soup_salad" value="Clear Soup">
+                Salad:
+                <input type="radio" name="soup_salad" value="Salad">
+            </div>
+          {% endif %}
+
+          {%if item[2].lower() == "maki combo pick 2 rolls:"%}
+            <div class="checkbox_roll required">
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="Vegetable" required> Vegetable Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="Salmon"> Salmon Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="Avocado"> Avocado Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="Eel"> Eel Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="Cucumber"> Cucumber Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="Tuna"> Tuna Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="Spicy Tuna"> Spicy Tuna Roll<br>
+               <input class="checkbox_roll" type="checkbox" name="rolls" value="Yellowtail"> Yellowtail Roll<br>
+            </div>
+          {%endif%}
+
+          {% if item[8]%}
+            <img class="item-img" src="../static/images/lunch/{{item[8]}}" alt="{{item[9]}}">
+          {% endif %}
+          <div class="item-count">
+            <button type="button" class='minus'>-</button>
+            <div class="quantity">
+              1
+            </div>
+            <button type="button" class='plus'>+</button>
+            </div>
+            <div class="added-price">
+            <!-- add total price with js -->
+                {% if item[6] == 'MP' %}
+                    Total: <span>$MP (market price)</span>
+                {% else %}
+                    Total: <span>{{"$%.2f"|format(item[4]|float)}}</span>
+                {% endif %}
+            </div>
+            <div class='add-cart'>
+<!--              add ajax for button to add to shopping cart db-->
+              <button name="add-cart">Add to Cart</button>
+            </div>
+        </div>
+
+    </div>
+  </div>

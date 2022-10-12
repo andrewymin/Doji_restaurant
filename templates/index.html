@@ -1,0 +1,184 @@
+{% include "header.html" %}
+    <title>DOJI</title>
+</head>
+
+<body>
+<!--  <div class="wrapper">-->
+
+
+    <section class="header">
+<!--       <button class="mood"></button>-->
+
+      <!-- Added mouse following icon; .sushi_icon by jquery -->
+
+
+      <nav class='navbar'>
+        <div class="brand">
+          <a class="nav-item active" href="{{ url_for('home') }}">DOJI</a>
+        </div>
+        <div class="drop-down">
+          <a class="nav-item dp-items" href=#menu>Menu</a>
+          <a class="nav-item dp-items" href=#local>Location</a>
+          <a class="nav-item dp-items" href=#contact>Times</a>
+        </div>
+
+        <div class="address nav-address">
+          <a href="#" class="menu_button monts-reg">Order Ahead!</a>
+        </div>
+
+        <a href="#" class="nav-item icon">
+          <img class="hamburger-icon flipIn" src="../static/images/menu-icon.svg" alt="menu-icon">
+          <img class="close-icon" src="../static/images/close-symbol.svg" alt="close-dropdown-menu">
+        </a>
+      </nav>
+
+      <div class="main">
+        <img class="logo-symbol" src="../static/images/matsumotto-logo.jpg" />
+        <h1 class="title">Elite hospitality<br /> nestled pleasantly in <br />your City.</h1>
+      </div>
+
+    </section>
+
+    <!-- Will end the header template here for all other pages if any -->
+
+
+    <section class="content">
+
+      <div class="main-ps big-screen">
+        <!-- change placeholder image once ready -->
+        <div>
+          <img class="sushi-main main-pic1" src="../static/images/main/sushi3.jpg" alt="sushi palatte">
+        </div>
+        <div>
+          <img class="sushi-main main-pic2" src="../static/images/main/sushi5.jpg" alt="sushi palatte">
+        </div>
+      </div>
+
+
+      <section id='menu'>
+        <div class="menu_desc">
+          <h1 class="sub-title poppins-title">Menu</h1>
+          <!-- <hr> -->
+          <div class="description">
+            <p>Main menu is going on every day at set times, so no excuse
+              not to eat mouth watering fresh sushi!</p>
+            <p>Enjoy the lunch menu during specified times.</p>
+          </div>
+        </div>
+        <!-- place menu here -->
+        <img class="palatte big-screen" src="../static/images/main/parallax1.png" alt="sushi palatte">
+        <div class="menu_div float-left slide-right">
+          <div class="day-schedule">
+            <h2 class="poppins-title">MAIN MENU</h2>
+            <hr>
+            <div class="sushi-type">
+
+              <img class="week-p" src="../static/images/main/sushi7.jpg" alt="sushi palatte">
+
+              <ul>
+                <li><span>*nigiri or sashimi</span></li>
+                <li><span>*premium rolls</span></li>
+                <li><span>*sushi roll</span></li>
+                <li><span>starters</span></li>
+                <li><span>sushi bar appetizers</span></li>
+                <li><span>salads</span></li>
+                <li><span>salads</span></li>
+                <li><span>soup</span></li>
+                <li><span>sushi entrees*</span></li>
+                <li><span>sushi bar exotic specialties*</span></li>
+                <li><span>vegetarian sushi</span></li>
+                <li><span>authentic japanese dishes</span></li>
+                <li><span>japanese fried rice</span></li>
+                <li><span>noodle</span></li>
+                <li><span>tempura dinners</span></li>
+              </ul>
+            </div>
+            <hr>
+          </div>
+          <a href="#" class="menu_button monts-reg">VIEW ></a>
+        </div>
+
+        <div class="content-pics">
+          <img class="main-pics top-pictures" src="../static/images/main/sushi5.jpg" alt="sushi palatte">
+          <img class="main-pics top-pictures" src="../static/images/main/parallax1.png" alt="sushi palatte">
+          <img class="main-pics top-pictures" src="../static/images/main/sushi6.jpg" alt="sushi palatte">
+        </div>
+
+        <img class="lunch-p big-screen" src="../static/images/main/sushi8.jpg" alt="sushi palatte">
+
+        <div class="menu_div lunch">
+          <div class="day-schedule">
+            <h2 class="poppins-title">LUNCH MENU</h2>
+            <hr>
+            <div class="sushi-type">
+              <ul>
+                <li><span>hot kitchen*</span></li>
+                <li><span>sushi bar combinations</span></li>
+              </ul>
+            </div>
+            <hr>
+          </div>
+          <a href="#" class="menu_button monts-reg">VIEW ></a>
+        </div>
+        <div class="content-pics">
+          <img class="main-pics bot-pictures" src="../static/images/main/sushi3.jpg" alt="sushi palatte">
+          <img class="main-pics bot-pictures" src="../static/images/main/sushi8.jpg" alt="sushi palatte">
+        </div>
+        <div class="parallax">
+          <img class="moving-pics mp1" src="../static/images/main/sushi2.jpg" alt="sushi palatte">
+          <img class="moving-pics mp2" src="../static/images/main/sushi4.jpg" alt="sushi palatte">
+          <img class="moving-pics mp3" src="../static/images/main/sushi9.jpg" alt="sushi palatte">
+        </div>
+
+      </section>
+    </section>
+
+    <section id="reviews">
+      <!-- maybe add api code for Google reviews? -->
+    </section>
+
+    <section id="local">
+      <div class="info">
+        <div class="map flex-1">
+          <div id="bmap">Insert iframe here</div>
+        </div>
+        <div id="contact" class="location-info  flex-1">
+          <div class="phone-addr">
+
+            <p class="subhead">Address:</p>
+            <address class="address">
+              Some address
+            </address>
+
+            <p class="subhead">Phone:</p>
+            <a class="pNumber" href="tel:555-555-5555">(555) 555-5555 </a>
+          </div>
+
+          <div class="hours">
+            <p class="subhead">Lunch</p>
+            <p class="weekday">Mon - Sat</p>
+            <div class="time lunch-time">
+              <p>11:00 AM - 2:30 PM</p>
+            </div>
+            <p class="subhead">Week</p>
+            <p class="weekday">Sun</p>
+            <div class="time sun">
+              <p>CLOSED</p>
+            </div>
+            <p class="weekday">Mon - Thu</p>
+            <div class="time mon-thu">
+              <p>11:00 AM - 2:30 PM</p>
+              <p>4:30 PM - 9:30 PM</p>
+            </div>
+            <p class="weekday">Fri - Sat</p>
+            <div class="time fri-sat">
+              <p>11:00 AM - 10:00 PM</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+{% include "footer.html" %}

@@ -1,0 +1,493 @@
+  {% include "header.html" %}
+  <title>Matsumotto - Main Menu</title>
+</head>
+
+<body>
+<!--  <div class="wrapper">-->
+
+
+    <section class="header">
+      <!-- <button class="mood"></button> -->
+
+      <!-- Added mouse following icon; .sushi_icon by jquery -->
+
+      <nav class='navbar'>
+        <!-- <li class="map_link"><a href="#">1975 W 120th Ave, Westminster <i class="las la-external-link-alt"></i></a></li> -->
+        <div class="sub-brand">
+          <a href="{{ url_for('home') }}"><img class="logo" src="../static/images/matsumotto-logo.jpg" /></a>
+          <!-- <a class="nav-item active" href=index.html>Matsumotto</a> -->
+        </div>
+        <!-- <a class="nav-item active" href=index.html>Matsumotto</a> -->
+        <div class="drop-down">
+          <a class="nav-item dp-items" href='{{ url_for("lunch") }}'>Lunch Menu</a>
+          <div class="categories">
+            <button class="nav-item dp-item">Categories</button>
+            <div class='food-dropdown'>
+              <a href="#starters">Starters</a>
+              <a href="#soups">Soups</a>
+              <a href="#salads">Salads</a>
+              <a href="#sba">Sushi Bar Appetizers</a>
+              <a href="#sbs">Sushi Bar Exotic Specialties</a>
+              <a href="#tempura-dinners">Tempura Dinners</a>
+              <a href="#ajd">Authentic Japanese Dishes</a>
+              <a href="#noodle">Noodle</a>
+              <a href="#jfr">Japanese Fried Rice</a>
+              <a href="#se">Sushi Entrées*</a>
+              <a href="#veg">Vegetarian Sushi</a>
+              <a href="#nigiri">*Nigiri or Sashimi</a>
+              <a href="#premium">*Premium Rolls</a>
+              <a href="#sushi-roll">*Sushi Rolls</a>
+            </div>
+          </div>
+          <a class="nav-item dp-items" href=#local>Location</a>
+          <a class="nav-item dp-items" href=#contact>Times</a>
+        </div>
+
+        <div>
+          <!-- Insert image for cart later -->
+<!--          <a class='cart' href="https://qmenu.us"><img src="../static/images/cart-icon.svg" /></a>-->
+          <div class="item_num"></div>
+          <a class='cart' href="{{url_for('cart')}}"><img src="../static/images/cart-icon.svg" /></a>
+<!--          <button class='cart'><img src="../static/images/cart-icon.svg" /></button>-->
+
+        </div>
+
+        <a href="#" class="nav-item icon">
+          <img class="hamburger-icon flipIn" src="../static/images/menu-icon.svg" alt="menu-icon">
+          <img class="close-icon" src="../static/images/close-symbol.svg" alt="close-dropdown-menu">
+        </a>
+      </nav>
+
+      <div class="w-main">
+        <h1 class="title">Main Menu</h1>
+      </div>
+    </section>
+    <!-- Will end the header template here for all other pages if any -->
+    <section id="lunch-items">
+
+      <button id="empty_ls">Empty localStorage for testing</button>
+
+      <h1 id="starters" class='lunch-subtitle'>STARTERS</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "starters" %}
+              <div data-id="{{item.id}}" class="item">
+                <div class="item-header">
+                  {{item.name.title()}}
+                </div>
+                <div class="price">
+                  <span>{{'%0.2f'|format(item.price|float)}}</span>
+                </div>
+                  {% if item.option2 %}
+                    <div class="option2">
+                     {{item.option2}} :
+                    </div>
+                    <div class="price2">
+                      <span>{{"%0.2f"|format(item.price2|float)}}</span>
+                    </div>
+                  {% endif %}
+                  {% if item.description %}
+                    <div class="description">
+                      {{item.description}}
+                    </div>
+                  {% endif %}
+
+                  {% if item.image %}
+                    <img class="item-img" src="../static/images/day/{{item.image}}" alt="{{menu.alt}}">
+                  {%endif%}
+              </div>
+          {% endif %}
+        {% endfor %}
+
+      </div>
+
+      <h1 id="soups" class='lunch-subtitle'>SOUPS</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "soup" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="salads" class='lunch-subtitle'>SALADS</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "salads" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="sba" class='lunch-subtitle'>Sushi Bar Appetizers</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "appetizers" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="sbs" class='lunch-subtitle'>exotic specialties*</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "exotic specialties*" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="tempura-dinners" class='lunch-subtitle'>Tempura Dinners</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "tempura dinners" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="ajd" class='lunch-subtitle'>Authentic Japanese Dishes</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "authentic japanese dishes" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="noodle" class='lunch-subtitle'>NOODLES</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "noodle" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="jfr" class='lunch-subtitle'>Japanese Fried Rice</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "japanese fried rice" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="se" class='lunch-subtitle'>Sushi Entrées*</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "sushi entrees*" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="veg" class='lunch-subtitle'>Vegetarian Sushi</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "vegetarian sushi" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="nigiri" class='lunch-subtitle'>*Nigiri or Sashimi</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "*nigiri or sashimi" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+
+              {% if item.price == 'MP'%}
+                <div class="price">
+                  <span>MP</span>
+                </div>
+              {%else%}
+                <div class="price">
+                  <span>{{'%0.2f'|format(item.price|float)}}</span>
+                </div>
+              {% endif %}
+
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="premium" class='lunch-subtitle'>*Premium Rolls</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "*premium rolls" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+      <h1 id="sushi-roll" class='lunch-subtitle'>*sushi rolls</h1>
+      <div class="grid">
+        {% for item in menu %}
+          {% if item.category == "*sushi rolls" %}
+            <div data-id="{{item.id}}" class="item">
+              <div class="item-header">
+                {{item.name.title()}}
+              </div>
+              <div class="price">
+                <span>{{'%0.2f'|format(item.price|float)}}</span>
+              </div>
+              <div class="description">
+                {% if item.description %}
+                  {{item.description}}
+                {% endif %}
+              </div>
+                {% if item.image %}
+                  <img class="item-img" src="../static/images/lunch/{{item.image}}" alt="{{menu.alt}}">
+                {%endif%}
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </section>
+
+    <section id="local">
+      <div class="info">
+        <div class="map flex-1">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6120.378627494565!2d-105.01499451855474!3d39.91477941992469!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xfb23759701780ec5!2sMatsumotto!5e0!3m2!1sen!2sus!4v1645823176566!5m2!1sen!2sus"
+            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <div id="contact" class="location-info  flex-1">
+          <div class="phone-addr">
+
+            <p class="subhead">Address:</p>
+            <address class="address">
+              1975 W 120th Ave Ste 600<br />
+              Westminster, CO 80234
+            </address>
+
+            <p class="subhead">Phone:</p>
+            <a class="pNumber" href="tel:720-398-8058">(720) 398-8058 </a>
+          </div>
+
+          <div class="hours">
+            <p class="subhead">Lunch</p>
+            <p class="weekday">Mon - Sat</p>
+            <div class="time lunch-time">
+              <p>11:00 AM - 2:30 PM</p>
+            </div>
+            <p class="subhead">Week</p>
+            <p class="weekday">Sun</p>
+            <div class="time sun">
+              <p>4:00 PM - 9:00 PM</p>
+            </div>
+            <p class="weekday">Mon - Thu</p>
+            <div class="time mon-thu">
+              <p>11:00 AM - 2:30 PM</p>
+              <p>4:30 PM - 9:30 PM</p>
+            </div>
+            <p class="weekday">Fri - Sat</p>
+            <div class="time fri-sat">
+              <p>11:00 AM - 10:00 PM</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+<!--    <footer>-->
+<!--      &lt;!&ndash; will add copyright © with jquery  &ndash;&gt;-->
+<!--    </footer>-->
+
+<!--  </div>-->
+
+  <div class="modal" id="modal"></div>
+  <div id='overlay'></div>
+
+  <button onclick="topFunction()" id='topButton' title="Go to top">Top</button>
+    <footer>
+      <!-- will add copyright © with jquery  -->
+    </footer>
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+  <script src="../static/js/index.js" charset="utf-8" type="text/javascript"></script>
+  <script src="../static/js/menu.js" charset="utf-8" ></script>
+
+</body>
+
+</html>
