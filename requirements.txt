@@ -4,3 +4,4 @@ stripe==2.74.0
 SQLAlchemy==1.4.32
 Flask-SQLAlchemy==2.5.1
 greenlet==1.1.2
+pandas==1.5.0
