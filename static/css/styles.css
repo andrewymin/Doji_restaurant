@@ -81,6 +81,7 @@ body {
 }
 
 .brand > a {
+  font-family: 'Macondo', cursive;
   font-weight: bold;
   font-size: 3rem;
 }
