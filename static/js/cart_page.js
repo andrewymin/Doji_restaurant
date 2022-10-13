@@ -244,7 +244,7 @@ function checkout(){
     $.ajax({
         url:"/create-checkout-session",
         type: "POST",
-        data: {items:JSON.stringify(items_json)},
+        data: {items: JSON.stringify(items_json)},
         success: function(data){
             window.location = data.url
         }
