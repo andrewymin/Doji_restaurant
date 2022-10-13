@@ -17,7 +17,7 @@ gsap.fromTo(
     x: -30
   },
   {
-    duration: 1,
+    duration: .5,
     opacity: 1,
     x: 0,
     scrollTrigger: {

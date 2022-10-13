@@ -124,8 +124,8 @@ nav {
   border-radius: 50%;
   top: 18%;
   left: 13%;
-  max-width: 30%;
-  min-width: 22%;
+  max-width: 23%;
+  min-width: 10%;
   animation: fadein 1s ease-in;
 }
 
