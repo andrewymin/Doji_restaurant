@@ -1,5 +1,5 @@
 {% include "header.html" %}
-  <title>Matsumotto - Shopping Cart</title>
+  <title>DOJI - Shopping Cart</title>
 </head>
 
 <body>
@@ -12,12 +12,9 @@
       <!-- Added mouse following icon; .sushi_icon by jquery -->
 
  <nav class='navbar cart_nav'>
-        <!-- <li class="map_link"><a href="#">1975 W 120th Ave, Westminster <i class="las la-external-link-alt"></i></a></li> -->
         <div class="sub-brand">
-          <a href="{{ url_for('home') }}"><img class="logo" src="../static/images/matsumotto-logo.jpg" /></a>
-          <!-- <a class="nav-item active" href=index.html>Matsumotto</a> -->
+          <a href="{{ url_for('home') }}"><img class="logo" src="../static/images/DOJI.png" /></a>
         </div>
-        <!-- <a class="nav-item active" href=index.html>Matsumotto</a> -->
         <div class="drop-down">
           <a class="nav-item dp-items" href='{{ url_for("day") }}'>Main Menu</a>
           <a class="nav-item dp-items" href='{{ url_for("lunch") }}'>Lunch Menu</a>
@@ -25,7 +22,6 @@
 
         <div>
           <!-- Insert image for cart later -->
-<!--          <a class='cart' href="https://qmenu.us"><img src="../static/images/cart-icon.svg" /></a>-->
           <div class="item_num"></div>
           <a class='cart' href="{{ url_for('cart')}}"><img src="../static/images/cart-icon.svg" /></a>
         </div>
@@ -43,7 +39,6 @@
         <div class="cart_list flex-1"></div>
 
         <div class="checkout flex-1">
-<!--            <img class="logo" src="../static/images/matsumotto-logo.jpg" />-->
             <div class="pick_up_time">Order ahead, food be ready in 30min</div>
             <div class="total">Subtotal: $<span></span></div>
             <div><button onclick="checkout()">Checkout</button></div>
