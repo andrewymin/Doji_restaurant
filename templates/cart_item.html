@@ -1,7 +1,7 @@
 
 {%for i in items%}
   <div data-id="{{i.id}}" class="item">
-    <div>
+    <div class="cart_buttons">
       <button class="edit" onclick="edit({{i.position}})">Edit</button>
       <button class="delete" onclick="delete_item({{i.position}})">Delete</button>
     </div>

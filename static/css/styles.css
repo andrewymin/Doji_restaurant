@@ -823,10 +823,28 @@ input[type="text"] {
 
 .cart_list .item {
     cursor: auto;
+    background-color: transparent;
+}
+
+.cart_list .item:hover {
+  background-color: #ffd08a;
+  color: black;
+}
+
+.cart_buttons {
+    grid-column: 3;
+    grid-row: 4;
+    display: flex;
+    justify-content: space-between;
 }
 
 .edit, .delete {
+    background-color: #CC9544;
     cursor: pointer;
+    padding: 5px;
+    outline: black;
+    color: white;
+    border-radius: 6px;
 }
 
 .checkout {
