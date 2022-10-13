@@ -4,7 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 import os
 import stripe
 
-from file_convert import Menu
+# from file_convert import Menu
 
 app = Flask(__name__)
 # Creating secret key for sessions

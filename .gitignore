@@ -1,6 +1,5 @@
 .DS_Store
 .env
-.file_convert.py
 .flaskenv
 *.pyc
 *.pyo
