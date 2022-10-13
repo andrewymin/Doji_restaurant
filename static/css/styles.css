@@ -514,7 +514,7 @@ nav div:nth-child(3) {
 }
 
 .cart {
-  background: crimson;
+  background-color: crimson;
   border: none;
   outline: none;
   width: 75%;
@@ -523,7 +523,7 @@ nav div:nth-child(3) {
   border-radius: 22px;
   text-decoration: none;
   height: 100%;
-  color: #fff;
+  color: #eee;
   display: block;
   cursor: pointer;
 }
@@ -533,7 +533,7 @@ nav div:nth-child(3) {
 }
 
 .cart:hover {
-  background: darkolivegreen;
+  background-color: darkred;
 }
 
 .l-main {
@@ -835,8 +835,20 @@ input[type="text"] {
     flex-direction: column;
     justify-content: space-evenly;
 }
+
+.checkoutButton {
+    cursor: pointer;
+    outline: none;
+    padding: 12px;
+    border-radius: 23px;
+    background: crimson;
+    font-size: 1.2rem;
+    color: #eee;
 }
 
+.checkoutButton:hover {
+    background-color: darkred;
+}
 
 /***************************** animations ********************************/
 .slide-up {
