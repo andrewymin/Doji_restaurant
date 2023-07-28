@@ -1,22 +1,19 @@
+/*COLORS*/
 /*
-#1C0A00
-#361500
-#603601
-#CC9544 - darkgold
-#ffffff
-#0a2200
-#ff782e
-#ff7f7f
-#d2ffce
-#008080
-#733141
- */
+#4D4130 - lightBlack
+#CC9544 - darkGold
+#D5B586 - lightGold
+#4D4130 - lightGoldTextColor
+*/
+
 /* font-family: 'Frank Ruhl Libre', serif;
 font-family: 'Montserrat', sans-serif;
 font-family: 'Poppins', sans-serif;
 font-family: 'Ubuntu', sans-serif; */
 /********** Elements **********/
 * {
+/*  margin: 0;
+  padding: 0;*/
   box-sizing: border-box;
 }
 
@@ -41,8 +38,12 @@ body {
   overflow-y: scroll;
   /* perspective: 10px; */
   /*transform-style: preserve-3d;*/
-  background-color: #000;
+/*  background-color: #000;*/
   color: #CC9544;
+}
+
+section, footer {
+  background-color: #000;
 }
 
 /************************ Fonts ***************************/
@@ -83,12 +84,15 @@ body {
 .brand > a {
   font-family: 'Macondo', cursive;
   font-weight: bold;
-  font-size: 3rem;
+  font-size: 0;
+  padding: 0;
+  border-radius: 50%;
 }
 
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   text-align: center;
   padding: 17px 10%;
 }
@@ -102,11 +106,18 @@ nav {
 }
 
 .nav-item:hover {
-  color: #FF6464;
+  color: #ff7f7f;
+}
+
+#menu_icon {
+  display: none;
 }
 
 .hamburger-icon, .close-icon {
   width: 1.5rem;
+  position: absolute;
+  left: 30%;
+  top: 22%;
 }
 
 .icon {
@@ -121,13 +132,9 @@ nav {
 }
 
 .logo-symbol {
-  position: absolute;
   border-radius: 50%;
-  top: 18%;
-  left: 13%;
-  max-width: 23%;
-  min-width: 10%;
-  animation: fadein 1s ease-in;
+/*  animation: fadein 1s ease-in;*/
+  width: 100px;
 }
 
 .title {
@@ -182,20 +189,20 @@ nav {
 
 .main-pic1 {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   margin: 3.75rem 0 0 1.5rem;
 }
 
 .main-pic2 {
   position: relative;
-  z-index: -1;
+  z-index: 1;
   margin: 0 1.5rem 3.75rem 0;
   float: right;
 }
 
 .palatte {
   position: relative;
-  z-index: -1;
+  z-index: -;
   display: block;
   margin: auto;
   width: max(17rem, 40%);
@@ -208,7 +215,7 @@ nav {
   max-width: 30%;
   top: 3px;
   right: 1.5rem;
-  z-index: -1;
+  z-index: 1;
 }
 
 .lunch-p {
@@ -225,7 +232,7 @@ nav {
   text-align: center;
   margin: 8rem;
   position: relative;
-  z-index: -1
+  z-index: 1
 }
 
 .main-pics {
@@ -246,23 +253,8 @@ nav {
   z-index: 1;
 }
 
-.mp1 {
-  left: 31%;
-  z-index: -1;
-}
-
-.mp2 {
-  right: 10%;
-}
-
-.mp3 {
-  right: 40%;
-}
-
 /******************************** Menu/Content *******************************/
-/* .menu_div {
-  min-height: 200px;
-} */
+
 #menu {
   clear: right;
 }
@@ -292,7 +284,7 @@ nav {
   border: 2px solid #cc9544;
   margin: 5rem 10rem;
   position: relative;
-  z-index: 0;
+  z-index: 3;
 }
 
 .float-left {
@@ -324,11 +316,11 @@ nav {
 }
 
 .menu_button {
-  color: #fff;
+  color: #000;
   display: inline-block;
   border-radius: 20px;
   text-decoration: none;
-  background: #ff7f7f;
+  background: #CC9544;
   cursor: pointer;
   min-width: 30%;
   border: none;
@@ -339,8 +331,7 @@ nav {
 
 .menu_button:hover {
   transition: .5s;
-  box-shadow: 0 0 10px #fff;
-  background: #d16236;
+  background: #ff7f7f;
 }
 
 /*************************** Location/hours ******************************/
@@ -358,8 +349,8 @@ nav {
 }
 
 .location-info {
-  background: #733141;
-  color: #fff;
+  background: #D5B586;
+  color: #4D4130;
   padding: 20px;
 }
 
@@ -367,7 +358,7 @@ nav {
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   letter-spacing: 1px;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid #4D4130;
 }
 
 .address {
@@ -376,7 +367,7 @@ nav {
 
 .pNumber {
   text-decoration: none;
-  color: #fff;
+  color: #4D4130;
 }
 
 .pNumber:hover {
@@ -399,12 +390,12 @@ nav {
 .time.open {
   padding: 0 7px;
   border-radius: 15px;
-  border: 2px solid #CC9544;
+  border: 2px solid #ff7f7f;
 }
 
 .weekday {
   margin: 0;
-  text-decoration: underline double #d2ffce 1px;
+  text-decoration: underline double green 1px;
 }
 
 #topButton {
@@ -416,7 +407,7 @@ nav {
   border: none;
   outline: none;
   background-color: #CC9544;
-  color: #fff;
+  color: #000;
   cursor: pointer;
   padding: 12px;
   border-radius: 19px;
@@ -425,9 +416,14 @@ nav {
 }
 
 #topButton:hover {
-  background-color: #71bf1d;
+  background-color: #ff7f7f;
   color: #000;
   /* Add a dark-grey background on hover */
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
 }
 
 /************************************ Footer ***********************************/
@@ -439,7 +435,7 @@ footer {
 
 /****************************** Lunch html css ******************************/
 .sub-brand {
-  width: 16%;
+  width: 100px;
 }
 
 .logo {
@@ -496,13 +492,6 @@ footer {
   cursor: pointer;
 }
 
-nav div:nth-child(3) {
-  /* max-width: 9%; */
-  min-width: 10%;
-  height: 10%;
-  margin-top: 14px;
-}
-
 .item_num {
   background-color: #83b311;
   border-radius: 50%;
@@ -513,27 +502,26 @@ nav div:nth-child(3) {
   pointer-events: none;
 }
 
-.cart {
-  background-color: crimson;
+.cart_icon {
+  background-color: #CC9544;
   border: none;
   outline: none;
-  width: 75%;
+  width: 50px;
+  height: 50px;
   letter-spacing: 2px;
   padding: 13px;
   border-radius: 22px;
   text-decoration: none;
-  height: 100%;
-  color: #eee;
   display: block;
   cursor: pointer;
 }
 
-.cart img {
+.cart_icon img {
   width: 1.5rem;
 }
 
-.cart:hover {
-  background-color: darkred;
+.cart_icon:hover {
+  background-color: #ff7f7f;
 }
 
 .l-main {
@@ -568,8 +556,8 @@ nav div:nth-child(3) {
 .item {
   font-family: 'Montserrat', sans-serif;
   cursor: pointer;
-  background-color: #CC9544;
-  color: #fff;
+  background-color: #D5B586;
+  color: #4D4130;
   padding: 10px;
   margin: 15px;
   border-radius: 10px;
@@ -802,12 +790,13 @@ input[type="text"] {
 
 .cart_nav {
     position: relative;
-    background-color: beige;
 }
 
 .cart_box {
     display: flex;
-    height: 50vh;
+    height: 80vh;
+    background-color: #D5B586;
+    color: #4D4130;
 }
 
 .cart_list {
@@ -828,6 +817,7 @@ input[type="text"] {
 .cart_list .item {
     cursor: auto;
     background-color: transparent;
+    border: 2px solid #4D4130;
 }
 
 .cart_list .item:hover {
@@ -859,17 +849,19 @@ input[type="text"] {
 }
 
 .checkoutButton {
+    border: none;
     cursor: pointer;
     outline: none;
     padding: 12px;
     border-radius: 23px;
-    background: crimson;
+    background: #CC9544;
     font-size: 1.2rem;
     color: #eee;
+    border: 2px solid #4D4130;
 }
 
 .checkoutButton:hover {
-    background-color: darkred;
+    background-color: #ff7f7f;
 }
 
 .empty_cart{
@@ -990,18 +982,24 @@ input[type="text"] {
     text-align: left;
   }
 
+  #menu_icon {
+    display: block;
+    grid-column: 2;
+    grid-row: 1;
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+
   .icon {
     display: block;
-    position: absolute;
-    top: .75rem;
-    right: .75rem;
+    width: fit-content;
+    padding: 0;
   }
 
   .close-icon {
     position: absolute;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    left: 50%;
+    left: 30%;
     display: none;
   }
 
@@ -1009,6 +1007,13 @@ input[type="text"] {
     max-width: 77px;
     height: 75%;
     margin-top: 14px;
+    grid-column: 2/3;
+  }
+
+  .title {
+    top: 58%;
+    width: 100%;
+    padding: 0 2rem;
   }
 
   .sushi-main {
@@ -1040,7 +1045,7 @@ input[type="text"] {
   }
 
   iframe {
-    min-height: 21.875rem;
+    min-height: 28.875rem;
   }
 
   .modal-body .item {

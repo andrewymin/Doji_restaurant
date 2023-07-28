@@ -1,4 +1,5 @@
-{% include "header.html" %}
+{% include "components/header.html" %}
+  <script defer src="../static/js/cart_page.js" charset="utf-8" type="text/javascript"></script>
   <title>DOJI - Shopping Cart</title>
 </head>
 
@@ -20,22 +21,25 @@
           <a class="nav-item dp-items" href='{{ url_for("lunch") }}'>Lunch Menu</a>
         </div>
 
-        <div>
-          <!-- Insert image for cart later -->
+        <div class="cart">
           <div class="item_num"></div>
-          <a class='cart' href="{{ url_for('cart')}}"><img src="../static/images/cart-icon.svg" /></a>
+          <a class='cart_icon' href="{{url_for('cart')}}"><img src="../static/images/cart-icon.svg" /></a>
         </div>
 
-        <a href="#" class="nav-item icon">
-          <img class="hamburger-icon flipIn" src="../static/images/menu-icon.svg" alt="menu-icon">
-          <img class="close-icon" src="../static/images/close-symbol.svg" alt="close-dropdown-menu">
-        </a>
+        <div id="menu_icon">
+          <a href="#" class="nav-item icon">
+            <img class="hamburger-icon flipIn" src="../static/images/menu-icon.svg" alt="menu-icon">
+            <img class="close-icon" src="../static/images/close-symbol.svg" alt="close-dropdown-menu">
+          </a>
+        </div>
       </nav>
 
     </section>
     <!-- Will end the header template here for all other pages if any -->
 
     <div class="cart_box">
+        <!--Button for testing localStorage, comment out when not in dev mode-->
+<!--      <button id="empty_ls">Empty localStorage for testing</button>-->
         <div class="cart_list flex-1"></div>
 
         <div class="checkout flex-1">
@@ -45,20 +49,5 @@
         </div>
     </div>
 
-<div class="modal" id="modal"></div>
-<div id='overlay'></div>
+{% include "components/footer.html" %}
 
-    <footer>
-      <!-- will add copyright © with jquery  -->
-    </footer>
-
-<!--  </div>-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-    <script src="../static/js/cart_page.js" charset="utf-8" type="text/javascript"></script>
-    <button onclick="topFunction()" id='topButton' title="Go to top">Top</button>
-
-</body>
-
-</html>

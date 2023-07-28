@@ -1,4 +1,4 @@
-{% include "header.html" %}
+{% include "components/header.html" %}
     <script defer src="../static/js/gsap.js" charset="utf-8" type="text/javascript"></script>
     <title>DOJI</title>
 </head>
@@ -15,7 +15,8 @@
 
       <nav class='navbar'>
         <div class="brand">
-          <a class="nav-item active" href="{{ url_for('home') }}">DOJI</a>
+<!--          <a class="nav-item active" href="{{ url_for('home') }}">DOJI</a>-->
+          <a class="nav-item active" href="{{ url_for('home') }}"><img class="logo-symbol" src="../static/images/DOJI.png" /></a>
         </div>
         <div class="drop-down">
           <a class="nav-item dp-items" href=#menu>Menu</a>
@@ -23,25 +24,28 @@
           <a class="nav-item dp-items" href=#contact>Times</a>
         </div>
 
-        <div class="address nav-address">
-          <a href="#" class="menu_button monts-reg">Order Ahead!</a>
+        <div class="cart">
+          <div class="item_num"></div>
+          <a class='cart_icon' href="{{url_for('cart')}}"><img src="../static/images/cart-icon.svg" /></a>
         </div>
 
-        <a href="#" class="nav-item icon">
-          <img class="hamburger-icon flipIn" src="../static/images/menu-icon.svg" alt="menu-icon">
-          <img class="close-icon" src="../static/images/close-symbol.svg" alt="close-dropdown-menu">
-        </a>
+        <div id="menu_icon">
+          <a href="#" class="nav-item icon">
+            <img class="hamburger-icon flipIn" src="../static/images/menu-icon.svg" alt="menu-icon">
+            <img class="close-icon" src="../static/images/close-symbol.svg" alt="close-dropdown-menu">
+          </a>
+        </div>
+
       </nav>
 
       <div class="main">
-        <img class="logo-symbol" src="../static/images/DOJI.png" />
+<!--        <img class="logo-symbol" src="../static/images/DOJI.png" />-->
         <h1 class="title">Elite hospitality<br /> nestled pleasantly in <br />your City.</h1>
       </div>
 
     </section>
 
     <!-- Will end the header template here for all other pages if any -->
-
 
     <section class="content">
 
@@ -125,11 +129,11 @@
           <img class="main-pics bot-pictures" src="../static/images/main/sushi3.jpg" alt="sushi palatte">
           <img class="main-pics bot-pictures" src="../static/images/main/sushi8.jpg" alt="sushi palatte">
         </div>
-        <div class="parallax">
-          <img class="moving-pics mp1" src="../static/images/main/sushi2.jpg" alt="sushi palatte">
-          <img class="moving-pics mp2" src="../static/images/main/sushi4.jpg" alt="sushi palatte">
-          <img class="moving-pics mp3" src="../static/images/main/sushi9.jpg" alt="sushi palatte">
-        </div>
+<!--        <div class="parallax">-->
+<!--          <img class="moving-pics mp1" src="../static/images/main/sushi2.jpg" alt="sushi palatte">-->
+<!--          <img class="moving-pics mp2" src="../static/images/main/sushi4.jpg" alt="sushi palatte">-->
+<!--          <img class="moving-pics mp3" src="../static/images/main/sushi9.jpg" alt="sushi palatte">-->
+<!--        </div>-->
 
       </section>
     </section>
@@ -138,48 +142,5 @@
       <!-- maybe add api code for Google reviews? -->
     </section>
 
-    <section id="local">
-      <div class="info">
-        <div class="map flex-1">
-          <div id="bmap">Insert iframe here</div>
-        </div>
-        <div id="contact" class="location-info  flex-1">
-          <div class="phone-addr">
-
-            <p class="subhead">Address:</p>
-            <address class="address">
-              Some address
-            </address>
-
-            <p class="subhead">Phone:</p>
-            <a class="pNumber" href="tel:555-555-5555">(555) 555-5555 </a>
-          </div>
-
-          <div class="hours">
-            <p class="subhead">Lunch</p>
-            <p class="weekday">Mon - Sat</p>
-            <div class="time lunch-time">
-              <p>11:00 AM - 2:30 PM</p>
-            </div>
-            <p class="subhead">Week</p>
-            <p class="weekday">Sun</p>
-            <div class="time sun">
-              <p>CLOSED</p>
-            </div>
-            <p class="weekday">Mon - Thu</p>
-            <div class="time mon-thu">
-              <p>11:00 AM - 2:30 PM</p>
-              <p>4:30 PM - 9:30 PM</p>
-            </div>
-            <p class="weekday">Fri - Sat</p>
-            <div class="time fri-sat">
-              <p>11:00 AM - 10:00 PM</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-{% include "footer.html" %}
+{% include "components/map_times.html" %}
+{% include "components/footer.html" %}

@@ -19,8 +19,12 @@ stripe.api_key = app.config['STRIPE_SECRET_KEY']
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///menu.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
-
 menu = db.Table('menu', db.metadata, autoload=True, autoload_with=db.engine)
+
+# # Flask_sqlalchemy update to 3x now has different setup to allow databases
+# db = SQLAlchemy()
+# menu = db.Table('menu', db.metadata)
+# db.init_app(app)
 
 
 @app.route('/')
@@ -28,7 +32,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/all_day', methods=["GET", "POST"])
+@app.route('/main', methods=["GET", "POST"])
 def day():
     # querying using db.session since not using model existing menu db
     results = db.session.query(menu).all()
@@ -38,7 +42,8 @@ def day():
     # print(item_5)
     # if item_5[3]:
     #     pass
-    return render_template('all_day_menu.html', menu=results)
+    # return render_template('all_day_menu.html', menu=results)
+    return render_template('main_menu.html', menu=results)
     # return render_template('cart.html')
 
 

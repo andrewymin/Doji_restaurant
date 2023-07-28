@@ -2,6 +2,7 @@ const overlay = $('#overlay');
 var items = localStorage.getItem('items') || [];
 
 function current_cart(items){
+  console.log(JSON.parse(localStorage.getItem('items')).length)
   $.ajax({
     url:"/shopping_cart",
     type: "POST",
@@ -241,12 +242,15 @@ function updateItem(edit_item_pos){
 
 function checkout(){
     var items_json = JSON.parse(localStorage.getItem('items'))
-    $.ajax({
-        url:"/create-checkout-session",
-        type: "POST",
-        data: {items: JSON.stringify(items_json)},
-        success: function(data){
-            window.location = data.url
-        }
-    })
+    if (items_json != 0) {
+        $.ajax({
+            url:"/create-checkout-session",
+            type: "POST",
+            data: {items: JSON.stringify(items_json)},
+            success: function(data){
+                window.location = data.url
+            }
+        })
+    }
+    console.log('no items in cart to checkout!')
 }

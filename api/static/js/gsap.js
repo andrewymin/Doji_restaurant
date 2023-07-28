@@ -5,10 +5,10 @@ let tl = new gsap.timeline({defaults: {ease: 'power2.inOut'}});
 const main = $(".main");
 var menu_id = $("#menu");
 
-tl.to(
-  ".logo-symbol",
-  {duration: 1,rotation: 360}
-)
+//tl.to(
+//  ".logo-symbol",
+//  {duration: 1,rotation: 360}
+//)
 
 gsap.fromTo(
   ".slide-right",
@@ -22,7 +22,7 @@ gsap.fromTo(
     x: 0,
     scrollTrigger: {
       trigger: ".slide-right",
-      start: "top center",
+      start: "top 80%",
 //      markers: true,
     }
   }
@@ -36,7 +36,7 @@ topPics.forEach(pic => {
     {duration: 1, opacity: 1, x: 0,
       scrollTrigger: {
         trigger: pic, // the trigger must be the same as the targeted element
-        start: "top center",
+        start: "top 80%",
 //          markers: true,
         }
       }
@@ -51,7 +51,7 @@ botPics.forEach(pic => {
     {duration: 1, opacity: 1, x: 0,
       scrollTrigger: {
         trigger: pic,
-        start: "top center",
+        start: "top 80%",
 //          markers: true,
         }
       }
@@ -70,44 +70,44 @@ gsap.fromTo(
     x: 0,
     scrollTrigger: {
       trigger: ".lunch",
-      start: "top center",
+      start: "top 80%",
 //      markers: true,
     }
   }
 );
 
-gsap.to(
-  ".mp1",
-  {duration: 2, y:-1000,
-  scrollTrigger: {
-    trigger: menu_id,
-    start: 'top bottom',
-    scrub: 1,
-//    markers: true,
-    },
-  }
-)
-
-gsap.to(
-  ".mp2",
-  {duration: 2, y:-1300,
-    scrollTrigger: {
-    trigger: menu_id,
-    start: 'top bottom',
-    scrub: 2,
-//    markers: true,
-    },
-  }
-)
-
-gsap.to(
-  ".mp3",
-  {duration: 2, y:-700,
-    scrollTrigger: {
-    trigger: ".lunch",
-    start: '-200px bottom',
-    scrub: 2,
-//    markers: true,
-    },
-  }
-)
+//gsap.to(
+//  ".mp1",
+//  {duration: 2, y:-1000,
+//  scrollTrigger: {
+//    trigger: menu_id,
+//    start: 'top bottom',
+//    scrub: 1,
+////    markers: true,
+//    },
+//  }
+//)
+//
+//gsap.to(
+//  ".mp2",
+//  {duration: 2, y:-1300,
+//    scrollTrigger: {
+//    trigger: menu_id,
+//    start: 'top bottom',
+//    scrub: 2,
+////    markers: true,
+//    },
+//  }
+//)
+//
+//gsap.to(
+//  ".mp3",
+//  {duration: 2, y:-700,
+//    scrollTrigger: {
+//    trigger: ".lunch",
+//    start: '-200px bottom',
+//    scrub: 2,
+////    markers: true,
+//    },
+//  }
+//)

@@ -1,4 +1,5 @@
-{% include "header.html" %}
+{% include "components/header.html" %}
+  <script defer src="../static/js/menu.js" charset="utf-8" ></script>
   <title>DOJI - Lunch Menu</title>
 </head>
 
@@ -17,7 +18,7 @@
           <a href="{{ url_for('home') }}"><img class="logo" src="../static/images/DOJI.png" /></a>
         </div>
         <div class="drop-down">
-          <a class="nav-item dp-items" href='{{ url_for("day") }}'>Week Menu</a>
+          <a class="nav-item dp-items" href='{{ url_for("day") }}'>Main Menu</a>
           <div class="categories">
             <button class="nav-item dp-item" >Categories</button>
             <div class='food-dropdown'>
@@ -29,21 +30,20 @@
           <a class="nav-item dp-items" href=#contact>Times</a>
         </div>
 
-        <div>
-          <!-- Insert image for cart later -->
+        <div class="cart">
           <div class="item_num"></div>
-          <a class='cart' href="{{url_for('cart')}}"><img src="../static/images/cart-icon.svg" /></a>
+          <a class='cart_icon' href="{{url_for('cart')}}"><img src="../static/images/cart-icon.svg" /></a>
         </div>
 
-        <a href="#" class="nav-item icon">
-          <img class="hamburger-icon flipIn" src="../static/images/menu-icon.svg" alt="menu-icon">
-          <img class="close-icon" src="../static/images/close-symbol.svg" alt="close-dropdown-menu">
-        </a>
+        <div id="menu_icon">
+          <a href="#" class="nav-item icon">
+            <img class="hamburger-icon flipIn" src="../static/images/menu-icon.svg" alt="menu-icon">
+            <img class="close-icon" src="../static/images/close-symbol.svg" alt="close-dropdown-menu">
+          </a>
+        </div>
       </nav>
 
-      <div class="l-main">
-        <h1 class="title">Lunch Menu</h1>
-      </div>
+      <div class="l-main"></div>
     </section>
     <!-- Will end the header template here for all other pages if any -->
     <section id="lunch-items">
@@ -115,62 +115,6 @@
       </div>
     </section>
 
-    <section id="local">
-      <div class="info">
-        <div class="map flex-1">
-          Insert iframe here
-        </div>
-        <div id="contact" class="location-info  flex-1">
-          <div class="phone-addr">
+{% include "components/map_times.html" %}
+{% include "components/footer.html" %}
 
-            <p class="subhead">Address:</p>
-            <address class="address">
-              Some address
-            </address>
-
-            <p class="subhead">Phone:</p>
-            <a class="pNumber" href="tel:555-555-5555">(555) 555-5555</a>
-          </div>
-
-          <div class="hours">
-            <p class="subhead">Lunch</p>
-            <p class="weekday">Mon - Sat</p>
-            <div class="time lunch-time">
-              <p>11:00 AM - 2:30 PM</p>
-            </div>
-            <p class="subhead">Week</p>
-            <p class="weekday">Sun</p>
-            <div class="time sun">
-              <p>4:00 PM - 9:00 PM</p>
-            </div>
-            <p class="weekday">Mon - Thu</p>
-            <div class="time mon-thu">
-              <p>11:00 AM - 2:30 PM</p>
-              <p>4:30 PM - 9:30 PM</p>
-            </div>
-            <p class="weekday">Fri - Sat</p>
-            <div class="time fri-sat">
-              <p>11:00 AM - 10:00 PM</p>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </section>
-
-  <div class="modal" id="modal"></div>
-  <div id='overlay'></div>
-
-  <button onclick="topFunction()" id='topButton' title="Go to top">Top</button>
-    <footer>
-      <!-- will add copyright © with jquery  -->
-    </footer>
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-  <script src="../static/js/menu.js" charset="utf-8" ></script>
-
-</body>
-
-</html>
